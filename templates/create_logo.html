@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <h1>Company Logo Creater</h1>
+    <p>Please click the button to generate the company logos from the json input file.</p>
+    Company ID: <input type="text" name="FirstName" id="companyId">
+    <button onclick="createLogo()">Get Logo Details</button>
+    <br> {{ error }}
+    <script>
+        function createLogo() {
+            companyId = document.getElementById("companyId").value
+            location.href = "/api/v1/resources/getCompanyLogo/" + companyId;
+        }
+    </script>
+</body>
+
+</html>
