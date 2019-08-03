@@ -1,12 +1,63 @@
 <html>
-
+<head>
+    <style>
+        .cancelBtn{
+            margin-top: 20px;
+            background: white;
+            border: solid 1px #999;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 23px;
+            padding-top: 6px;
+            width: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+        .cancelBtn:hover{
+            box-shadow: 0px 2px 3px -2px #555;
+        }
+        .cancelBtn:active{
+            transform: translateY(1px);
+        }
+        .card{
+            width: 300px;
+            border: solid 1px #999;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 3px 10px -5px #bbb;
+            font-family: sans-serif;
+            font-size: 13px;
+        }
+        .row{
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .Key{
+            width: 50%;
+        }
+        .container{
+            width: 350px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        h3{
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Company Logo Creater</h1>
-    <p>Following are the company details:</p>
-    <br> <b>Company ID: </b><input type="text" name="FirstName" id="companyId" value="{{ companyDetails.companyId}}">
-    <br> <b>Company Name: </b><input type="text" name="FirstName" id="companyName" value="{{ companyDetails.companyName}}">
-    <br> <b>Company Logo: </b><input type="text" name="FirstName" id="companyLogo" value="{{ companyDetails.companyLogo}}">
-    <br><button onclick="cancel()">Cancel</button>
+    <div class="container">
+        <h3>Logo Created</h3>
+        <div class="card">
+            <div class="row"><div class="Key"><b>Company ID: </b></div><div>{{ companyDetails.companyId}}</div></div>
+            <div class="row"><div class="Key"><b>Company Name: </b></div><div><span>{{ companyDetails.companyName}}</span></div></div>
+            <div class="row"><div class="Key"><b>Company Logo: </b></div><div><span>{{ companyDetails.companyLogo}}</span></div></div>
+        </div>
+        <br><div onclick="cancel()" class="cancelBtn">Cancel</div>
+    </div>
     <script>
         function cancel() {
             location.href = "../../../../";

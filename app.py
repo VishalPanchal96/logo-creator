@@ -60,7 +60,7 @@ def get_company_logo(company_id):
 
         return render_template('view_logo.html', companyDetails = logo_details)
     except:
-        return "Please enter proper ID"
+        return render_template('create_logo.html', companyDetails = "Please enter valid ID")
 
 
 # Function check_occurence() : checking the occurence of each letter in the company name and returning the object
@@ -125,4 +125,5 @@ if __name__ == "__main__":
 #Handling for invalid routes
 @app.errorhandler(404)
 def page_not_found(e):
-    return jsonify({"status": "404", "data": "Page Not Found!"})
+    return render_template('create_logo.html', companyDetails = "Please enter a Id")
+    # return jsonify({"status": "404", "data": "Page Not Found!"})

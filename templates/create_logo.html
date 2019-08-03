@@ -1,11 +1,69 @@
 <html>
-
+<head>
+    <style>
+        .generate-logo-btn{
+            border: solid 1px #1f6eff;
+            height: 14px;
+            border-radius: 5px;
+            width: 82px;
+            font-family: sans-serif;
+            font-size: 12px;
+            margin-top: 20px;
+            background: #387eff;
+            padding: 8px;
+            color: white;
+            cursor: pointer;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .generate-logo-btn:active{
+            transform: translateY(1px);
+        }
+        .input-id{
+            height: 30px;
+            width: 90px;
+            border-radius: 4px;
+            padding-left: 5px;
+        }
+        .container{
+            width: 350px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        p{
+            margin-top: 50px;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+        .error-msg{
+            display: block;
+            margin-top: 2%;
+            margin-left: 26%;
+            font-family: sans-serif;
+            font-size: 13px;
+            color: #ff3636;
+        }
+        h3{
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+        .companyId{
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Company Logo Creater</h1>
-    <p>Please click the button to generate the company logos from the json input file.</p>
-    Company ID: <input type="text" name="FirstName" id="companyId">
-    <button onclick="createLogo()">Get Logo Details</button>
-    <br> {{ error }}
+    <div class="container">
+        <h3>Logo Creator</h3>
+        <p>Provide Company ID to generate logo</p>
+        <span class="companyId">Company ID: </span><input class="input-id" type="text" name="FirstName" id="companyId">
+        <span class="error-msg">{{companyDetails}}</span>
+        <div class="generate-logo-btn" onclick="createLogo()">Generate Logo</div>
+        <br>
+    </div>
     <script>
         function createLogo() {
             companyId = document.getElementById("companyId").value
