@@ -126,4 +126,3 @@ if __name__ == "__main__":
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('create_logo.html', companyDetails = "Please enter a Id")
-    # return jsonify({"status": "404", "data": "Page Not Found!"})
